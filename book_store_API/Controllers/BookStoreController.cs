@@ -28,7 +28,10 @@ namespace book_store_API.Controllers
                     return new JsonResult(NotFound());
                 }
 
-                inDb = book;
+                inDb.Title = book.Title;
+                inDb.Author = book.Author;
+                inDb.Isbn = book.Isbn;
+                inDb.PublicationDate = book.PublicationDate;
             }
 
             _context.SaveChanges();
